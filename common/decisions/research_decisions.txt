@@ -1,0 +1,128 @@
+unlock_tech = { #declare category
+    tribal_infantry_equipment = { #declare decision name
+        visible = { #set conditions to be able to see the decision
+            NOT = {
+                has_tech = infantry_tech_level_tribal #does not have tribal tech
+            }
+        }
+        available = {
+            NOT = {
+                has_tech = infantry_tech_level_tribal
+                has_country_flag = decicated_advancement
+            }
+        }
+        modifier = {
+			research_speed_factor = -20
+		}
+        complete_effect = {
+            set_country_flag = dedicated_advancement
+		}
+        remove_effect = {
+			set_technology = {
+				infantry_tech_level_tribal = 1
+			}
+            clr_country_flag = dedicated_advancement
+ 		}
+        days_remove = 30
+		fire_only_once = yes
+    }
+	settler_infantry_equipment = {
+		visible = {
+            has_tech = infantry_tech_level_tribal
+			NOT = {
+				has_tech = infantry_tech_level_settler
+			}
+		}
+		available = {
+            has_tech = infantry_tech_level_tribal
+            OR = {
+                has_equipment = { energy_equipment_2 > 5999 }
+                has_equipment = { ballistic_equipment_2 > 5999 }
+                has_equipment = { melee_equipment_4 > 5999 }
+            }
+            NOT = {
+                has_country_flag = decicated_advancement
+				has_tech = infantry_tech_level_settler
+			}
+            is_ai = no
+		}
+		modifier = {
+			research_speed_factor = -20
+		}
+		complete_effect = {
+            IF = { #if energy equipment met
+                LIMIT = { has_equipment = { energy_equipment_2 >5999 } }
+                add_equipment_to_stockpile = {
+                    type = energy_equipment_2
+                     amount = -6000
+                }
+            }
+            ELSE = { #nested if else to check equipment type and remove the right one
+                IF = { #while still breaking at the one that works
+                    LIMIT = { has_equipment = { ballistic_equipment_2 > 5999 } }
+                    add_equipment_to_stockpile = {
+                        type = ballistic_equipment_2
+                        amount = -6000
+                    }
+                }
+                ELSE = {
+                    LIMIT = { has_equipment = { melee_equipment_4 > 5999 } }
+                    add_equipment_to_stockpile = {
+                        type = melee_equipment_4
+                        amount = -6000
+                    }
+                }
+            }
+            set_country_flag = dedicated_advancement
+		}
+		remove_effect = {
+			set_technology = {
+				infantry_tech_level_settler = 1
+			}
+            clr_country_flag = dedicated_advancement
+ 		}
+		days_remove = 90
+		fire_only_once = yes
+	}
+	scientific_infantry_equipment = {
+		visible = {
+            has_tech = infantry_tech_level_settler
+			NOT = {
+				has_tech = infantry_tech_level_scientific
+			}
+		}
+		available = {
+            has_tech = infantry_tech_level_settler
+			NOT = {
+                has_country_flag = dedicated_advancement
+				has_tech = infantry_tech_level_scientific
+			}
+		}
+		modifier = {
+			research_speed_factor = -20
+		}
+		complete_effect = {
+            set_country_flag = dedicated_advancement
+		}
+		remove_effect = {
+			set_technology = {
+				infantry_tech_level_scientific = 1
+			}
+            clr_country_flag = dedicated_advancement
+ 		}
+		days_remove = 90
+		fire_only_once = yes
+	}
+    ##TODO 
+    #power_armour_tech_level_(settler/scientific)
+    #special_forces_tech_level_(tribal/settler/scientific)
+    #support_tech_level_(tribal/settler/scientific)
+    #vehicles_tech_level_(tribal/settler/scientific)
+    #robotics_tech_level_(tribal/settler/scientific)
+    #air_tech_level_(tribal/settler/scientific)
+    #naval_tech_level_(tribal/settler/scientific)
+    #tools_tech_level_(tribal/settler/scientific)
+    #habitation_tech_level_(tribal/settler/scientific)
+    #exploitation_tech_level_(tribal/settler/scientific)
+    #electronics_tech_level_(tribal/settler/scientific)
+}

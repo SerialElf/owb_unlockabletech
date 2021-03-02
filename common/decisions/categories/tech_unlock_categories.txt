@@ -1,0 +1,5 @@
+unlock_tech = {
+    visible = {
+        is_ai = no
+    }
+}

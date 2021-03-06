@@ -368,7 +368,7 @@ unlock_tech = { #declare category
                     type = demolitions_equipment
                     amount = -5000
                 }
-                }
+            }
             ELSE_IF = {
                 LIMIT = { 
                     OR = {
@@ -385,8 +385,6 @@ unlock_tech = { #declare category
                 add_equipment_to_stockpile = {
                     type = anti_tank_equipment
                     amount = -5000
-                }
-            }
                 }
             }
 		}

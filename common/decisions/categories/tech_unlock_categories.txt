@@ -3,3 +3,9 @@ unlock_tech = {
         is_ai = no
     }
 }
+unlockabletech_debug = {
+    visible = {
+        is_ai = no
+        has_global_flag = debug
+    }
+}

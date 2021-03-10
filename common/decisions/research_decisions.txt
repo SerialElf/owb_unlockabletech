@@ -56,10 +56,6 @@ unlock_tech = { #declare category
 		}
 		complete_effect = {
             set_country_flag = dedicated_advancement
-            add_equipment_to_stockpile = {
-                type = infantry_equipment
-                amount = -6000
-            }
 		}
 		remove_effect = {
 			set_technology = {
@@ -476,7 +472,7 @@ unlock_tech = { #declare category
 		days_remove = @unlock_timer_scientific
 		fire_only_once = yes
 	}
-    ## Vehicles ## ## TODO SCI
+    ## Vehicles ##
     tribal_vehicle_tech = {
         visible = {
             NOT = {
@@ -507,16 +503,50 @@ unlock_tech = { #declare category
     }
     settler_vehicle_tech = {
         visible = {
-            has_tech = vehicles_tech_level_settler
+            has_tech = vehicles_tech_level_tribal
             NOT = {
                 has_tech = vehicles_tech_level_tibal
                 has_country_flag = dedicated_advancement
             }
         }
         available = {
+            has_tech = vehicles_tech_level_tribal
+            NOT = {
+                has_tech = vehicles_tech_level_settler
+                has_country_flag = dedicated_advancement
+            }
+        }
+        modifier = {
+			research_speed_factor = -20
+		}
+        complete_effect = {
+            set_country_flag = dedicated_advancement
+        }
+        remove_effect = {
+            set_technology = {
+				vehicles_tech_level_settler = 1
+			}
+            clr_country_flag = dedicated_advancement
+ 		}
+        days_remove = @unlock_timer_settler
+    }
+    scientific_vehicle_tech = {
+        visible = {
             has_tech = vehicles_tech_level_settler
             NOT = {
-                has_tech = vehicles_tech_level_tibal
+                has_tech = vehicles_tech_level_scientific
+                has_country_flag = dedicated_advancement
+            }
+        }
+        available = {
+            has_tech = vehicles_tech_level_settler
+            OR = {
+                has_tech = car_tech_2
+                has_tech = apc_tech_1
+                has_tech = tank_tech_2
+            }
+            NOT = {
+                has_tech = vehicles_tech_level_scientific
                 has_country_flag = dedicated_advancement
             }
         }
@@ -562,7 +592,7 @@ unlock_tech = { #declare category
         days_remove = @unlock_timer_tribal
 		fire_only_once = yes
     }
-    ## Airplanes ## ## TODO SCI
+    ## Airplanes ##
     tribal_aero_tech = {
         visible = {
             NOT = {
@@ -664,9 +694,7 @@ unlock_tech = { #declare category
 		fire_only_once = yes
     }
     ##TODO
-    #vehicles_tech_level_(scientific)
     #robotics_tech_level_(settler/scientific)
-    #air_tech_level_(tribal/settler/scientific)
     #naval_tech_level_(tribal/settler/scientific)
     #tools_tech_level_(tribal/settler/scientific)
     #habitation_tech_level_(tribal/settler/scientific)

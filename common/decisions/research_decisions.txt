@@ -144,16 +144,10 @@ unlock_tech = { #declare category
         }
         available = {
             has_tech = power_armour_tech_level_settler
+            has_tech = scav_pa_tech
             NOT = {
                 has_tech = power_armour_tech_level_scientific
                 has_country_flag = dedicated_advancement
-            }
-            OR = {
-                has_equipment = { power_armor_equipment_3 > 4999 }
-                has_equipment = { power_armor_equipment_3_light > 4999 }
-                has_equipment = { power_armor_equipment_4 > 4999 }
-                has_equipment = { power_armor_equipment_4_light > 4999 }
-                has_equipment = { power_armor_equipment_5 > 4999 }
             }
         }
         modifier = {
@@ -207,27 +201,18 @@ unlock_tech = { #declare category
 			}
 		}
 		available = {
-            has_tech = infantry_tech_level_tribal
-            OR = {
-                has_equipment = { spec_ops_equipment_3 > 4999 }
-                has_equipment = { spec_ops_equipment_4 > 4999 }
-                has_equipment = { spec_ops_equipment_5 > 4999 }
-            }
+            has_tech = special_forces_tech_level_tribal
+            has_tech = hardening_armour_tech
             NOT = {
                 has_country_flag = decicated_advancement
 				has_tech = special_forces_tech_level_settler
 			}
-            is_ai = no
 		}
 		modifier = {
 			research_speed_factor = -20
 		}
 		complete_effect = {
             set_country_flag = dedicated_advancement
-            add_equipment_to_stockpile = {
-                type = spec_ops_equipment
-                amount = -5000
-            }
 		}
 		remove_effect = {
 			set_technology = {
@@ -247,7 +232,7 @@ unlock_tech = { #declare category
 		}
 		available = {
             has_tech = special_forces_tech_level_settler
-            has_equipment = { spec_ops_equipment_5 > 4999 }
+            has_tech = spec_ops_equipment_tech_4
 			NOT = {
                 has_country_flag = dedicated_advancement
 				has_tech = special_forces_tech_level_scientific
@@ -258,10 +243,6 @@ unlock_tech = { #declare category
 		}
 		complete_effect = {
             set_country_flag = dedicated_advancement
-            add_equipment_to_stockpile = {
-                type = spec_ops_equipment
-                amount = -5000
-            }
 		}
 		remove_effect = {
 			set_technology = {

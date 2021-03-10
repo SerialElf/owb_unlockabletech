@@ -41,9 +41,9 @@ unlock_tech = { #declare category
 		available = {
             has_tech = infantry_tech_level_tribal
             OR = {
-                has_equipment = { energy_equipment_2 > 5999 }
-                has_equipment = { ballistic_equipment_2 > 5999 }
-                has_equipment = { melee_equipment_4 > 5999 }
+                has_tech = melee_weaponry_tech_3
+                has_tech = warrior_equipment
+                has_tech = energy_weaponry_tech_1 
             }
             NOT = {
                 has_country_flag = decicated_advancement
@@ -76,10 +76,9 @@ unlock_tech = { #declare category
 		available = {
             has_tech = infantry_tech_level_settler
             OR = { 
-                has_equipment = { energy_equipment_3 > 5999 }
+                has_tech = overcharged_ammunition
                 has_equipment = { energy_equipment_4 > 5999 }
-                has_equipment = { ballistic_equipment_3 > 5999 }
-                has_equipment = { ballistic_equipment_4 > 5999 }
+                has_equipment = { basic_infantry_equipment > 5999 }
             }
 			NOT = {
                 has_country_flag = dedicated_advancement
@@ -91,10 +90,6 @@ unlock_tech = { #declare category
 		}
 		complete_effect = {
             set_country_flag = dedicated_advancement
-            add_equipment_to_stockpile = {
-                type = infantry_equipment
-                amount = -6000
-            }
 		}
 		remove_effect = {
 			set_technology = {
@@ -166,10 +161,6 @@ unlock_tech = { #declare category
         }
         complete_effect = {
             set_country_flag = dedicated_advancement
-            add_equipment_to_stockpile = {
-                type = power_armor_equipment
-                amount = -5000
-            }
         }
         remove_effect = {
             set_technology = {

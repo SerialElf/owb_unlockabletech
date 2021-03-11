@@ -291,12 +291,17 @@ unlock_tech = { #declare category
 		available = {
             has_tech = infantry_tech_level_tribal
             OR = {
-                has_equipment = { ballistic_fireteam_equipment_3 > 4999 }
-                has_equipment = { energy_fireteam_equipment_3 > 4999 }
-                has_equipment = { flamer_demolitions_equipment_3 > 4999 }
-                has_equipment = { explosive_demolitions_equipment_3 > 4999 }
-                has_equipment = { dogs_equipment_2 > 4999 }
-                has_equipment = { anti_tank_equipment_2 > 4999 }
+                has_tech = ballistic_fireteam_equipment_2
+                has_tech = energy_fireteam_weaponry_tech_2
+                has_tech = flamer_demolitions_weaponry_tech_2
+                has_tech = flamer_demolitions_cooling_jacket_tech
+                has_tech = explosive_demolitions_weaponry_tech_2
+                has_tech = dog_tech_1
+                has_tech = anti_tank_tech_1
+                has_tech = med_company_tech_2
+                has_tech = recon_company_tech_2
+                has_tech = logistics_company_tech_2
+                has_tech = maintenance_company_tech_2
             }
             NOT = {
                 has_country_flag = decicated_advancement
@@ -309,52 +314,6 @@ unlock_tech = { #declare category
 		}
 		complete_effect = {
             set_country_flag = dedicated_advancement
-            IF = {
-                LIMIT = { 
-                    OR = {
-                        has_equipment = { ballistic_fireteam_equipment_3 > 4999 }
-                        has_equipment = { energy_fireteam_equipment_3 > 4999 }
-                        has_equipment = { ballistic_fireteam_equipment_4 > 4999 }
-                        has_equipment = { energy_fireteam_equipment_4 > 4999 }
-                    }
-                }
-                add_equipment_to_stockpile = {
-                    type = fireteam_equipment
-                    amount = -5000
-                }
-            }
-            ELSE_IF = {
-                LIMIT = {
-                    OR = {
-                        has_equipment = { flamer_demolitions_equipment_3 > 4999 }
-                        has_equipment = { explosive_demolitions_equipment_3 > 4999 }
-                        has_equipment = { flamer_demolitions_equipment_4 > 4999 }
-                        has_equipment = { explosive_demolitions_equipment_4 > 4999 }
-                    }
-                }
-                add_equipment_to_stockpile = {
-                    type = demolitions_equipment
-                    amount = -5000
-                }
-            }
-            ELSE_IF = {
-                LIMIT = { 
-                    OR = {
-                        has_equipment = { dogs_equipment_2 > 4999 }
-                        has_equipment = { dogs_equipment_3 > 4999 }
-                    }
-                }
-                add_equipment_to_stockpile = {
-                    type = dogs_equipment
-                    amount = -5000
-                }
-            }
-            ELSE = {
-                add_equipment_to_stockpile = {
-                    type = anti_tank_equipment
-                    amount = -5000
-                }
-            }
 		}
 		remove_effect = {
 			set_technology = {
@@ -375,12 +334,17 @@ unlock_tech = { #declare category
 		available = {
             has_tech = infantry_tech_level_settler
             OR = {
-                has_equipment = { ballistic_fireteam_equipment_4 > 4999 }
-                has_equipment = { energy_fireteam_equipment_4 > 4999 }
-                has_equipment = { flamer_demolitions_equipment_4 > 4999 }
-                has_equipment = { explosive_demolitions_equipment_4 > 4999 }
-                has_equipment = { dogs_equipment_3 > 4999 }
-                has_equipment = { anti_tank_equipment_3 > 4999 }
+                has_tech = ballistic_fireteam_cooling_jacket_tech
+                has_tech = energy_fireteam_cooling_jacket_tech
+                has_tech = flamer_demolitions_weaponry_tech_2
+                has_tech = flamer_demolitions_cooling_jacket_tech
+                has_tech = explosive_demolitions_propulsion_charge_tech
+                has_tech = dog_tech_3
+                has_tech = anti_tank_tech_2
+                has_tech = med_company_tech_5
+                has_tech = recon_company_tech_5
+                has_tech = logistics_company_tech_5
+                has_tech = maintenance_company_tech_5
             }
             NOT = {
                 has_country_flag = decicated_advancement
@@ -393,47 +357,6 @@ unlock_tech = { #declare category
 		}
 		complete_effect = {
             set_country_flag = dedicated_advancement
-            IF = {
-                LIMIT = { 
-                    OR = {
-                        has_equipment = { ballistic_fireteam_equipment_4 > 4999 }
-                        has_equipment = { energy_fireteam_equipment_4 > 4999 }
-                    }
-                }
-                add_equipment_to_stockpile = {
-                    type = fireteam_equipment
-                    amount = -5000
-                }
-            }
-            ELSE = {
-                IF = {
-                    LIMIT = {
-                        OR = {
-                            has_equipment = { flamer_demolitions_equipment_4 > 4999 }
-                            has_equipment = { explosive_demolitions_equipment_4 > 4999 }
-                        }
-                    }
-                    add_equipment_to_stockpile = {
-                        type = demolitions_equipment
-                        amount = -5000
-                    }
-                }
-                ELSE = {
-                    IF = {
-                        LIMIT = { has_equipment = { dogs_equipment_3 > 4999 } }
-                        add_equipment_to_stockpile = {
-                            type = dogs_equipment
-                            amount = -5000
-                        }
-                    }
-                    ELSE = {
-                        add_equipment_to_stockpile = {
-                            type = anti_tank_equipment
-                            amount = -5000
-                        }
-                    }
-                }
-            }
 		}
 		remove_effect = {
 			set_technology = {

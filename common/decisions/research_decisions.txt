@@ -1,6 +1,8 @@
 @unlock_timer_tribal = 30
 @unlock_timer_settler = 120
 @unlock_timer_scientific = 180
+@unlock_modifier_tribal = 3
+@unlock_modifier_settler = 2
 
 unlock_tech = {
     ## Infantry Equipment ##
@@ -13,7 +15,7 @@ unlock_tech = {
         available = {
             NOT = {
                 has_tech = infantry_tech_level_tribal
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
         }
         modifier = {
@@ -46,7 +48,7 @@ unlock_tech = {
                 has_tech = energy_weaponry_tech_1 
             }
             NOT = {
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
 				has_tech = infantry_tech_level_settler
 			}
             is_ai = no
@@ -175,7 +177,7 @@ unlock_tech = {
         available = {
             NOT = {
                 has_tech = special_forces_tech_level_tribal
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
         }
         modifier = {
@@ -204,7 +206,7 @@ unlock_tech = {
             has_tech = special_forces_tech_level_tribal
             has_tech = hardening_armour_tech
             NOT = {
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
 				has_tech = special_forces_tech_level_settler
 			}
 		}
@@ -263,7 +265,7 @@ unlock_tech = {
         available = {
             NOT = {
                 has_tech = support_tech_level_tribal
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
         }
         modifier = {
@@ -304,7 +306,7 @@ unlock_tech = {
                 has_tech = maintenance_company_tech_2
             }
             NOT = {
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
 				has_tech = support_tech_level_settler
 			}
             is_ai = no
@@ -347,7 +349,7 @@ unlock_tech = {
                 has_tech = maintenance_company_tech_5
             }
             NOT = {
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
 				has_tech = support_tech_level_scientific
 			}
             is_ai = no
@@ -378,7 +380,7 @@ unlock_tech = {
         available = {
             NOT = {
                 has_tech = vehicles_tech_level_tribal
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
         }
         modifier = {
@@ -469,7 +471,7 @@ unlock_tech = {
         available = {
             NOT = {
                 has_tech = robotics_tech_level_tribal
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
         }
         modifier = {
@@ -500,7 +502,7 @@ unlock_tech = {
             has_tech = robot_automation_tech
             NOT = {
                 has_tech = robotics_tech_level_settler
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
         }
         modifier = {
@@ -530,7 +532,7 @@ unlock_tech = {
             has_tech = robotics_tech_level_settler
             NOT = {
                 has_tech = robotics_tech_level_scientific
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
             OR = {
                 has_tech = robot_gutsy_tech
@@ -563,7 +565,7 @@ unlock_tech = {
         available = {
             NOT = {
                 has_tech = air_tech_level_tribal
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
         }
         modifier = {
@@ -593,7 +595,7 @@ unlock_tech = {
             has_tech = air_tech_level_tribal
             NOT = {
                 has_tech = air_tech_level_settler
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
             OR = {
                 has_tech = air_chaff_tech
@@ -628,7 +630,7 @@ unlock_tech = {
             has_tech = aerodynamics_tech_3
             NOT = {
                 has_tech = air_tech_level_scientific
-                has_country_flag = decicated_advancement
+                has_country_flag = dedicated_advancement
             }
             OR = {
                 has_tech = fighter_engine_tech

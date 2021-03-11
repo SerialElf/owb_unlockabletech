@@ -459,7 +459,7 @@ unlock_tech = {
 			}
             clr_country_flag = dedicated_advancement
  		}
-        days_remove = @unlock_timer_settler
+        days_remove = @unlock_timer_scientific 
     }
     ## Robotics ##
     tribal_robotics_tech = {
@@ -656,12 +656,106 @@ unlock_tech = {
         days_remove = @unlock_timer_scientific
 		fire_only_once = yes
     }
+    ## Naval ##
+    tribal_naval_tech = {
+        visible = {
+            NOT = {
+                has_tech = naval_tech_level_tribal
+            }
+        }
+        available = {
+            NOT = {
+                has_tech = naval_tech_level_tribal
+                has_country_flag = dedicated_advancement
+            }
+        }
+        modifier = {
+			research_speed_factor = -20
+		}
+        complete_effect = {
+            set_country_flag = dedicated_advancement
+		}
+        remove_effect = {
+			set_technology = {
+				naval_tech_level_tribal = 1
+			}
+            clr_country_flag = dedicated_advancement
+ 		}
+        days_remove = @unlock_timer_tribal
+		fire_only_once = yes
+    }
+    settler_naval_tech = {
+        visible = {
+            has_tech = naval_tech_level_tribal
+            NOT = {
+                has_tech = naval_tech_level_settler
+            }
+        }
+        available = {
+            has_tech = naval_tech_level_tribal
+            has_tech = nautics_tech_2
+            NOT = {
+                has_tech = naval_tech_level_settler
+                has_country_flag = dedicated_advancement
+            }
+            OR = {
+            has_tech = 
+            }
+        }
+        modifier = {
+			research_speed_factor = -20
+		}
+        complete_effect = {
+            set_country_flag = dedicated_advancement
+		}
+        remove_effect = {
+			set_technology = {
+				naval_tech_level_settler = 1
+			}
+            clr_country_flag = dedicated_advancement
+ 		}
+        days_remove = @unlock_timer_settler
+		fire_only_once = yes
+    }
+    scientific_naval_tech = {
+        visible = {
+            has_tech = naval_tech_level_settler
+            NOT = {
+                has_tech = naval_tech_level_scientific
+            }
+        }
+        available = {
+            has_tech = naval_tech_level_settler
+            has_tech = nautics_tech_4
+            NOT = {
+                has_tech = naval_tech_level_scientific
+                has_country_flag = dedicated_advancement
+            }
+            OR = {
+            }
+        }
+        modifier = {
+			research_speed_factor = -20
+		}
+        complete_effect = {
+            set_country_flag = dedicated_advancement
+		}
+        remove_effect = {
+			set_technology = {
+				naval_tech_level_scientific = 1
+			}
+            clr_country_flag = dedicated_advancement
+ 		}
+        days_remove = @unlock_timer_scientific
+		fire_only_once = yes
+    }
     ##TODO
     #naval_tech_level_(tribal/settler/scientific)
     #tools_tech_level_(tribal/settler/scientific)
     #habitation_tech_level_(tribal/settler/scientific)
     #exploitation_tech_level_(tribal/settler/scientific)
     #electronics_tech_level_(tribal/settler/scientific)
+    #society level modifiers
 }
 unlockabletech_debug = {
     add_debug_equipment = {
